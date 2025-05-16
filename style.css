@@ -9,7 +9,18 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #70c5ce;
+  background: #70c5ce url('https://i.ibb.co/6vZ3K0p/clouds.png') repeat-x;
+  background-size: contain;
+  animation: cloudMove 60s linear infinite;
+}
+
+@keyframes cloudMove {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
 }
 
 #player {
