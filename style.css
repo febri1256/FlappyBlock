@@ -9,7 +9,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #70c5ce url('https://i.ibb.co/6vZ3K0p/clouds.png') repeat-x;
+  background: #70c5ce url('https://opengameart.org/sites/default/files/clouds.png') repeat-x;
   background-size: contain;
   animation: cloudMove 60s linear infinite;
 }
