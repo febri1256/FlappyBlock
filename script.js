@@ -3,7 +3,7 @@ const player = document.getElementById('player');
 const scoreDisplay = document.getElementById('score');
 const gameOverDisplay = document.createElement('div');  // Create a div for Game Over text
 
-let gravity = 1 ;
+let gravity = 1;
 let velocity = 1;
 let jump = -9;
 let isGameOver = false;
@@ -21,10 +21,16 @@ gameOverDisplay.style.display = 'none';  // Initially hidden
 gameOverDisplay.textContent = "GAME OVER!";
 game.appendChild(gameOverDisplay);
 
+// Keyboard control
 document.addEventListener('keydown', function(e) {
   if (['Space', 'Enter', 'ControlLeft'].includes(e.code)) {
     velocity = jump;
   }
+});
+
+// Touch control (for mobile)
+document.addEventListener('touchstart', function(e) {
+  velocity = jump;
 });
 
 function createPipe() {
@@ -90,7 +96,7 @@ function endGame() {
   gameOverDisplay.style.display = 'block';  // Show the "Game Over" message
   setTimeout(() => {
     location.reload();
-  }, 300); // Jeda agar tombol OK bisa diklik
+  }, 300);
 }
 
 function gameLoop() {
